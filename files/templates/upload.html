@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <h2>Welcome to the file uploader</h2>
+ <form method="post" enctype="multipart/form-data">
+   {% csrf_token %}
+   {{ form.as_p }}
+   <button type="submit" class="btn btn-primary">Upload file</button>
+ </form>
+ <!-- <form enctype="multipart/form-data" method="post">
+   {% csrf_token %}
+   <input type="file" name="file">
+   <button type="submit">Upload</button>
+ </form>
+ {% if file_url %}
+  <p>File is now available at: <a href="{{file_url}}">{{ file_url }}</a></p>
+ {% endif %} -->
+{% endblock %}
