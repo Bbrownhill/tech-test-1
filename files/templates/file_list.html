@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h2>File List</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>Uploaded at</th>
+        <th>Download!</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for file in files %}
+        <tr>
+          <td>{{ file.location }}</td>
+          <td>{{ file.created_at }}</td>
+          <td>
+            <a href="{{ file.location }}" class="btn btn-primary" target="_blank">Download File</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
