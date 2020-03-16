@@ -21,6 +21,7 @@ from files import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.upload, name='upload'),
     path('upload/', views.upload, name='upload'),
     path('file_store/', views.file_list, name='file_list')
 ]
